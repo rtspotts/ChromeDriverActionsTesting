@@ -10,10 +10,10 @@ const capabilities = Capabilities.chrome();
 const args = [
   "--headless",
   "--no-sandbox", // required for Linux without GUI
-  "--remote-debugging-port=9515"
+  "--disable-dev-shm-usage"
 ];
 
-capabilities.set('chromeOptions', { args });
+capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage"]});
 const driver = new Builder().withCapabilities(capabilities).build();
 
 Given('I am on the Google search page', async function () {

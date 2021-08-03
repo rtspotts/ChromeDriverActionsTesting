@@ -4,8 +4,8 @@
     "description": "A Node.js project for testing Cucumber and ChromeDrive in GitHub Actions",
     "dependencies": {
         "chai": "^4.3.4",
+        "chromedriver": "^92.0.1",
         "cucumber": "^7.0.0-rc.0",
-        "cucumberjs-chromedriver": "^0.3.1",
         "selenium-webdriver": "^4.0.0-beta.4"
     },
     "scripts": {
