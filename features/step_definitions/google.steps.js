@@ -1,4 +1,4 @@
-const { Given, When, Then, After } = require('cucumber');
+const { Given, When, Then, After, setDefaultTimeout} = require('cucumber');
 const { Builder, By, Capabilities, Key } = require('selenium-webdriver');
 const { expect } = require('chai');
 
