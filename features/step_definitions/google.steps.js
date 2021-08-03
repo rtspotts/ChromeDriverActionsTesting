@@ -13,7 +13,7 @@ const args = [
   "--disable-dev-shm-usage"
 ];
 
-capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage"]});
+capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]});
 const driver = new Builder().withCapabilities(capabilities).build();
 
 Given('I am on the Google search page', async function () {
