@@ -13,6 +13,8 @@ const args = [
   "--disable-dev-shm-usage"
 ];
 
+
+chrome.setDefaultService(new chrome.ServiceBuilder('/usr/local/share/chrome_driver/chromedriver').build());
 capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless", "--remote-debugging-port=9222"]});
 const driver = new Builder().withCapabilities(capabilities).forBrowser('chrome').build();
 
