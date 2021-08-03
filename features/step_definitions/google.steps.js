@@ -15,6 +15,7 @@ const args = [
 
 capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]});
 const driver = new Builder().withCapabilities(capabilities).build();
+driver.manage().setTimeouts({ implicit: 30000, pageLoad: 30000, script: 30000 });
 
 Given('I am on the Google search page', async function () {
     await driver.get('http://www.google.com');
