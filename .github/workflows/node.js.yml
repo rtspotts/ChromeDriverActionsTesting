@@ -28,9 +28,9 @@ jobs:
         cache: 'npm'
 #    - run: sudo apt-get install chromium-browswer
     - name: Get Chrome version
-      run: /usr/bin/google-chrome --headless
-    - name: Get the chromedriver binary location 
-      run: ls -l /usr/local/share/chrome_driver
+      run: /usr/bin/google-chrome --version
+    - name: Get the chromedriver version
+      run: /usr/local/share/chrome_driver/chromedriver -v
     - name: Install dependencies
       run: npm install
     - run: npm ci
