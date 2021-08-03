@@ -1,10 +1,8 @@
-var { Given, When, Then, After, setDefaultTimeout} = require('@cucumber/cucumber');
+var { Given, When, Then, After} = require('@cucumber/cucumber');
 const { Builder, By, Capabilities, Key } = require('selenium-webdriver');
 const { expect } = require('chai');
 
 require("chromedriver");
-
-setDefaultTimeout(60 * 1000);
 
 // driver setup
 const capabilities = Capabilities.chrome();
