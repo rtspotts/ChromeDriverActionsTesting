@@ -16,11 +16,11 @@ const args = [
 capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]});
 const driver = new Builder().withCapabilities(capabilities).build();
 
-Given('I am on the Google search page', async function () {
+Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
     await driver.get('http://www.google.com');
 });
 
-When('I search for {string}', async function (searchTerm) {
+When('I search for {string}', {timeout: 60 * 1000}, async function (searchTerm) {
     const element = await driver.findElement(By.name('q'));
     element.sendKeys(searchTerm, Key.RETURN);
     element.submit();
