@@ -13,7 +13,7 @@ const args = [
   "--disable-dev-shm-usage"
 ];
 
-capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless"]});
+capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless", "--remote-debugging-port=9222"]});
 const driver = new Builder().withCapabilities(capabilities).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
