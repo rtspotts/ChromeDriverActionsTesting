@@ -32,7 +32,7 @@ jobs:
     - name: Get the chromedriver version
       run: /usr/local/share/chrome_driver/chromedriver -v
     - name: Add chromedriver to the PATH variable
-      run: export PATH=$PATH:/usr/local/share/chrome_driver
+      run: export PATH=$PATH:/usr/local/share/chrome_driver/chromedriver
     - run: env
     - name: Install dependencies
       run: npm install
