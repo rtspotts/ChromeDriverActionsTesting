@@ -13,8 +13,8 @@ options.addArguments("--no-sandbox");
 options.addArguments("--remote-debugging-port=9222");
 options.addArguments("--disable-dev-shm-usage");
 
-capabilities.set('chromeOptions', options);
-const driver = new Builder().withCapabilities(capabilities).forBrowser('chrome').build();
+//capabilities.set('chromeOptions', options);
+const driver = new Builder().setChromeOptions(options).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
     await driver.get('http://www.google.com');
