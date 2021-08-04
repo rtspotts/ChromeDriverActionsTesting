@@ -12,9 +12,9 @@ options.addArguments("--headless");
 options.addArguments("--no-sandbox");
 options.addArguments("--remote-debugging-port=9222");
 options.addArguments("--disable-dev-shm-usage");
-options.addArguments("wc3=false");
+options.addArguments("w3c=false");
 
-capabilities.set('chromeOptions', { "w3c": false });
+//capabilities.set('chromeOptions', { "w3c": false });
 const driver = new Builder().setChromeOptions(options).withCapabilities(capabilities).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
