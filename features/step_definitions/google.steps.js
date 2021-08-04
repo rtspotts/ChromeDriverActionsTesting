@@ -16,7 +16,7 @@ const args = [
 
 
 // chrome.setDefaultService(new chrome.ServiceBuilder('/usr/local/share/chrome_driver/chromedriver').build());
-capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless", "--remote-debugging-port=9222"]});
+capabilities.set('chromeOptions', {'args': ['--no-sandbox', '--disable-dev-shm-usage', '--headless', '--remote-debugging-port=9222']});
 const driver = new Builder().withCapabilities(capabilities).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
