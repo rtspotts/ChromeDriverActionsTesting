@@ -13,7 +13,7 @@ options.addArguments("--no-sandbox");
 options.addArguments("--remote-debugging-port=9222");
 options.addArguments("--disable-dev-shm-usage");
 
-capabilities.set('goog:chromeOptions', options);
+capabilities.set('chromeOptions', options);
 const driver = new Builder().withCapabilities(capabilities).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
