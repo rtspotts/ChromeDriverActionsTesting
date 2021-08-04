@@ -15,7 +15,7 @@ const args = [
   '--disable-dev-shm-usage'
 ];
 
-capabilities.set('chromeOptions', args);
+capabilities.set("goog:chromeOptions", args);
 const driver = new Builder().withCapabilities(capabilities).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
