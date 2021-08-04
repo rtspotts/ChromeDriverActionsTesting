@@ -6,16 +6,12 @@ const chrome = require('selenium-webdriver/chrome');
 require('chromedriver');
 
 // driver setup
+const chrome = require('selenium-webdriver/chrome');
 var options = new chrome.Options();
+options.setChromeBinaryPath("/usr/bin/google-chrome");
 options.addArguments("--headless");
-options.addArguments("--no-sandbox");
-options.addArguments("--remote-debugging-port=9222");
-options.addArguments("--disable-dev-shm-usage");
-//options.addArguments("w3c=false");
 
-const capabilities = Capabilities.chrome();
-capabilities.set('chromeOptions', { "w3c": false });
-const driver = new Builder().withCapabilities(capabilities).setChromeOptions(options).forBrowser('chrome').build();
+const driver = new Builder().setChromeOptions(options).forBrowser("chrome").build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
     await driver.get('http://www.google.com');
