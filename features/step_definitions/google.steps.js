@@ -12,7 +12,7 @@ options.addArguments("--headless");
 options.addArguments("--no-sandbox");
 options.addArguments("--remote-debugging-port=9222");
 options.addArguments("--disable-dev-shm-usage");
-options.addArguments("w3c=false");
+options.addArguments("w3c=true");
 
 //capabilities.set('chromeOptions', { "w3c": false });
 const driver = new Builder().setChromeOptions(options).forBrowser('chrome').build();
