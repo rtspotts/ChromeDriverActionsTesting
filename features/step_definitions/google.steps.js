@@ -3,7 +3,7 @@ const { Builder, By, Capabilities, Key } = require('selenium-webdriver');
 const { expect } = require('chai');
 //const chrome = require('selenium-webdriver/chrome');
 
-require('/usr/local/share/chrome_driver/chromedriver');
+require('chromedriver');
 
 // driver setup
 const capabilities = Capabilities.chrome();
