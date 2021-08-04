@@ -15,7 +15,7 @@ options.addArguments("--disable-dev-shm-usage");
 
 const capabilities = Capabilities.chrome();
 capabilities.set('chromeOptions', { "w3c": false });
-const driver = new Builder().setChromeOptions(options).withCapabilities(capabilities).forBrowser('chrome').build();
+const driver = new Builder().withCapabilities(capabilities).setChromeOptions(options).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
     await driver.get('http://www.google.com');
