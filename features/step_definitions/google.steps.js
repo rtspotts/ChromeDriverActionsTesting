@@ -1,7 +1,6 @@
 var { Given, When, Then, After} = require('@cucumber/cucumber');
 const { Builder, By, Capabilities, Key } = require('selenium-webdriver');
 const { expect } = require('chai');
-const chrome = require('selenium-webdriver/chrome');
 
 require('chromedriver');
 
