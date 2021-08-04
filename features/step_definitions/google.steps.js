@@ -1,8 +1,9 @@
 var { Given, When, Then, After} = require('@cucumber/cucumber');
 const { Builder, By, Capabilities, Key } = require('selenium-webdriver');
 const { expect } = require('chai');
+const chrome = require('selenium-webdriver/chrome');
 
-require("chromedriver");
+// require("chromedriver");
 
 // driver setup
 const capabilities = Capabilities.chrome();
@@ -14,7 +15,7 @@ const args = [
 ];
 
 
-chrome.setDefaultService(new chrome.ServiceBuilder('/usr/local/share/chrome_driver/chromedriver').build());
+// chrome.setDefaultService(new chrome.ServiceBuilder('/usr/local/share/chrome_driver/chromedriver').build());
 capabilities.set('chromeOptions', {"args": ["--no-sandbox", "--disable-dev-shm-usage", "--headless", "--remote-debugging-port=9222"]});
 const driver = new Builder().withCapabilities(capabilities).forBrowser('chrome').build();
 
