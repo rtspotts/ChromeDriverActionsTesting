@@ -1,7 +1,7 @@
 var { Given, When, Then, After} = require('@cucumber/cucumber');
 const { Builder, By, Capabilities, Key } = require('selenium-webdriver');
 const { expect } = require('chai');
-//const chrome = require('selenium-webdriver/chrome');
+const chrome = require('selenium-webdriver/chrome');
 
 require('chromedriver');
 
@@ -11,12 +11,11 @@ const capabilities = Capabilities.chrome();
 const args = [
   "--headless",
   "--no-sandbox", // required for Linux without GUI
-  "--disable-dev-shm-usage"
+  '--remote-debugging-port=9222',
+  '--disable-dev-shm-usage'
 ];
 
-
-// chrome.setDefaultService(new chrome.ServiceBuilder('/usr/local/share/chrome_driver/chromedriver').build());
-capabilities.set('chromeOptions', {'args': ['--no-sandbox', '--disable-dev-shm-usage', '--headless', '--remote-debugging-port=9222']});
+capabilities.set('chromeOptions', args);
 const driver = new Builder().withCapabilities(capabilities).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
