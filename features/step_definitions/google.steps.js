@@ -14,7 +14,7 @@ options.addArguments("--remote-debugging-port=9222");
 options.addArguments("--disable-dev-shm-usage");
 
 //capabilities.set("goog:chromeOptions", args);
-const driver = new Builder().withCapabilities('goog:chromeOptions': options).forBrowser('chrome').build();
+const driver = new Builder().withCapabilities({'goog:chromeOptions': options}).forBrowser('chrome').build();
 
 Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
     await driver.get('http://www.google.com');
