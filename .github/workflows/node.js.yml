@@ -37,6 +37,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - run: npm install chromedriver --chromedriver_filepath=/usr/local/share/chrome_driver/chromedriver
+    - run: /home/runner/work/ChromeDriverActionsTesting/ChromeDriverActionsTesting/node_modules/chromedriver/lib/chromedriver/chromedriver -v
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
