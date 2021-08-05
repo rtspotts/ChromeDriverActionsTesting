@@ -10,24 +10,28 @@ var options = new chrome.Options();
 options.setChromeBinaryPath("/usr/bin/google-chrome");
 options.addArguments("--headless");
 
-const driver = new Builder().setChromeOptions(options).forBrowser("chrome").build();
+//To wait for browser to build and launch properly
+       let driver = new Builder().setChromeOptions(options).forBrowser("chrome").build();
 
-Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
-    await driver.get('http://www.google.com');
-});
+        //To fetch http://google.com from the browser with our code.
+        Given('I am on the Google search page', {timeout: 60 * 1000}, async function () {
+          await driver.get("http://google.com");
+        });
 
-When('I search for {string}', {timeout: 60 * 1000}, async function (searchTerm) {
-    const element = await driver.findElement(By.name('q'));
-    element.sendKeys(searchTerm, Key.RETURN);
-    element.submit();
-});
+        //To send a search query by passing the value in searchString.
+        When('I search for {string}', {timeout: 60 * 1000}, async function (searchTerm) {
+          await driver.findElement(By.name("q")).sendKeys(searchTerm,Key.RETURN);
+        });
 
-Then('the page title should start with {string}', {timeout: 60 * 1000}, async function (searchTerm) {
-    const title = await driver.getTitle();
-    const isTitleStartWithCheese = title.toLowerCase().lastIndexOf(`${searchTerm}`, 0) === 0;
-    expect(isTitleStartWithCheese).to.equal(true);
-});
+        //Verify the page title and print it
+        Then('the page title should start with {string}', {timeout: 60 * 1000}, async function (searchTerm) {
+          var title = await driver.getTitle();
+          const isTitleStartWithCheese = title.toLowerCase().lastIndexOf(`${searchTerm}`, 0) === 0;
+          expect(isTitleStartWithCheese).to.equal(true);
+          console.log('Title is:',title);
+        });
 
-After('end', async function(){
-    await driver.quit();
-});
+        //It is always a safe practice to quit the browser after execution
+        After('end', async function(){
+          await driver.quit();
+        });
